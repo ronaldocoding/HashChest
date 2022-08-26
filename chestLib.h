@@ -11,15 +11,19 @@ typedef struct Item {
     int key;
 } Item;
 
-typedef struct Node{
+typedef struct Node {
     Item item;
     struct Node * next;
 } Node;
 
-Node * chest[TABLE_SIZE]; // Struct global
+typedef struct Slot {
+    Node * firstNode;
+} Slot;
+
+Slot * chest[TABLE_SIZE]; // Struct global
 
 int hashFunction(int key);
-void handleCollision(Item item, int pos);
+void handleCollision(Node * newNode, int pos);
 void insert(Item item, int pos);
 void remove(char itemName[NAME_SIZE], int pos);
 int search(int key);
