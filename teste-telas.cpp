@@ -10,14 +10,9 @@
 #define BUSCAR 3
 #define SAIR 4
 
-int opt = 0, page = HOME, avisoNaTela = 0;
+int opt = 0, page = HOME;
 int lista[31];
-char textoAviso[100];
 
-typedef struct aviso {
-	int visivel;
-	int texto[100];
-} aviso;
 
 typedef struct telaInserir {
 	int opt, qtd, page, escolheuItem, itemsPagina;
@@ -29,7 +24,7 @@ typedef struct telaRemover {
 
 
 telaInserir inserir;
-aviso popup;
+telaRemover remover;
 
 void createListaObjetos (){
 	int i;
@@ -352,19 +347,28 @@ molduraTela();
 		if (tecla == 13){
 			if (opt == 0){
 				page = INSERIR;
+				
 				inserir.qtd = 0;
 				inserir.opt = 0;
 				inserir.page = 0;
 				inserir.escolheuItem = 0;
-				opt = 0;
 			}
 			
+			if (opt == 1){
+				page = REMOVER;
+				
+				remover.opt = 0;
+				remover.page = 0;
+				remover.escolheuItem = 0;
+				opt = 0;
+			}
+			if(opt == 2) {
+				page = BUSCAR;
+			}
 			if (opt == 3){
 				page = SAIR;
 			
 				opt = 0;
-				gotoxy(LARGURA, ALTURA);
-				system ("PAUSE");
 			}
 		}
 		
@@ -485,21 +489,55 @@ void showInserir (int tecla){
 		
 	}
 }
+
+void showRemover (int tecla) {
+	molduraTela();
+	
+	char text[4][50] = {"  ___ ___ __  __  _____   _____ ___ ",
+	" | _ \\ __|  \\/  |/ _ \\ \\ / / __| _ \\ ",
+		" |   / _|| |\\/| | (_) \\ V /| _||   / ",
+		" |_|_\\___|_|  |_|\\___/ \\_/ |___|_|_\\ "
+	};
+	int i, textLength = 41;
+	int x = (LARGURA - textLength)/2, y = 2;
+	reset();
+	for (i=0;i<4;i++){
+		gotoxy(x, y+i);
+		printf(text[i]);
+	}
+	
+}
+
+void showBuscar (int tecla) {
+	molduraTela();
+	
+	char text[4][50] = {"  ___ _   _ ___  ___   _   ___  ",
+	" | _ ) | | / __|/ __| /_\\ | _ \\ ",
+		" | _ \\ |_| \\__ \\ (__ / _ \\|   /",
+		" |___/\\___/|___/\\___/_/ \\_\\_|_\\"
+	};
+	int i, textLength = 32;
+	int x = (LARGURA - textLength)/2, y = 2;
+	reset();
+	for (i=0;i<4;i++){
+		gotoxy(x, y+i);
+		printf(text[i]);
+	}
+}
 int main (){
 	char tecla = 0;
 	createListaObjetos();
 	int antPage = page;
 	system ("MODE 140, 40");
 	system ("title Minecraft");
-	
-	showHome(tecla);
-	tecla = getch();
-	
+
 	
 	do{
 		switch(page){
 			case HOME: 	showHome(tecla); break;
 			case INSERIR: showInserir(tecla); break;
+			case REMOVER: showRemover(tecla); break;
+			case BUSCAR: showBuscar(tecla); break;
 			default: page = SAIR; break;
 		}
 	
