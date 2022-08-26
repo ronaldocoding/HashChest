@@ -1,6 +1,7 @@
 #include "chestLib.h"
 
-void handleCollision(Node * newNode, int pos) {
-    newNode->next = chest.slots[pos]->firstNode;
-    chest.slots[pos]->firstNode = newNode;
+int handleCollision(Chest * chest, Node * node, int pos) {
+  node->next = chest->slots[pos]->firstNode;
+  chest->slots[pos]->firstNode = node;
+  return 2;
 }
