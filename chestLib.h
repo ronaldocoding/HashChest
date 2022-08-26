@@ -34,7 +34,7 @@ bool isChestFull();
 void initializeChest();
 
 // Main functions
-int hashFunction(int key);
+int hashFunction(int key, char *name);
 void handleCollision(Node * newNode, int pos);
 void insertNode(Item item, int pos);
 void removeNode(char itemName[NAME_SIZE], int pos);
