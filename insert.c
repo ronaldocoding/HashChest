@@ -1,9 +1,14 @@
 #include "chestLib.h"
 
-void insertNode(Item item, int pos) {
-    /*
-     * A função insert deve inserir um item na lista encadeada vazia da posição
-     * recebida por parâmetro, caso a lista não esteja vazia, ela deve chamar
-     * handleCollision
-     */
-}
+int insertNode(Chest * chest, Item * item, int pos) {
+  if (isChestFull()) {
+    return 0;
+  }
+  Node * node = createNode(item);
+  if (chest->slots[pos]->firstNode == NULL) {
+    chest->slots[pos]->firstNode = node;
+    chest->busySlots++;
+    return 1;
+  }
+  return handleCollision();
+}    
