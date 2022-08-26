@@ -2,8 +2,9 @@
 #define LIB_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
-#define NAME_SIZE 100 // Valor global
-#define TABLE_SIZE 31 // Valor global
+#include <stdbool.h>
+#define NAME_SIZE 100
+#define TABLE_SIZE 31
 
 typedef struct Item {
     char name[NAME_SIZE];
@@ -11,17 +12,32 @@ typedef struct Item {
     int key;
 } Item;
 
-typedef struct Node{
+typedef struct Node {
     Item item;
     struct Node * next;
 } Node;
 
-Node * chest[TABLE_SIZE]; // Struct global
+typedef struct Slot {
+    Node * firstNode;
+} Slot;
 
+typedef struct Chest {
+    Slot * slots[TABLE_SIZE];
+    int busySlots;
+} Chest;
+
+Chest chest;
+
+// Utils functions
+Node * createNode(Item item);
+bool isChestFull();
+void initializeChest();
+
+// Main functions
 int hashFunction(int key);
-void handleCollision(Item item, int pos);
-void insert(Item item, int pos);
-void remove(char itemName[NAME_SIZE], int pos);
-int search(int key);
+void handleCollision(Node * newNode, int pos);
+void insertNode(Item item, int pos);
+void removeNode(char itemName[NAME_SIZE], int pos);
+int searchNode(int key);
 
 #endif
