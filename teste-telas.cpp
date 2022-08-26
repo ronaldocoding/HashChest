@@ -326,6 +326,14 @@ molduraTela();
 		
 				opt = 0;
 			}
+			
+			if (opt == 3){
+				page = SAIR;
+			
+				opt = 0;
+				gotoxy(LARGURA, ALTURA);
+				system ("PAUSE");
+			}
 		}
 		
 		gotoxy(40, ALTURA-4);
@@ -423,7 +431,7 @@ int main (){
 		
 		system ("CLS");
 	}while(page != SAIR);
-	getch();
+
 	gotoxy(LARGURA, ALTURA);
 	return 0;
 }
