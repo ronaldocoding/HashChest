@@ -2,7 +2,6 @@
 
 int hashFunction(int key) {
     
-    return key % TABLE_SIZE;
-    
+    return (key & 0x7FFFFFFF) % TABLE_SIZE;
     
 }
