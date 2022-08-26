@@ -344,60 +344,61 @@ molduraTela();
 }
 
 void showInserir (int tecla){
-
+	int itemsPerPage = 7, altura = 2;
 	if (tecla == 72){
 		opt--;
 		if(opt < 0) opt=0;
 			
-		if (opt < listaPage * 3){
+		if (opt < listaPage * itemsPerPage){
 				listaPage  -- ;
 		}
 	}
 		if (tecla == 80){
 			opt++;
-			if(opt >31) opt=30;
+			if(opt >30) opt=30;
 			
-			if (opt >= (listaPage+1) * 3 ){
+			if (opt >= (listaPage+1) * itemsPerPage ){
 				listaPage++;
 			}
 		}
 		
 		if (tecla == 77){
 			listaPage++;
-			opt = listaPage * 3;
-			if (listaPage > 10) listaPage = 10;
+			if (listaPage > 31 / itemsPerPage) listaPage =  31 / itemsPerPage;
+			opt = listaPage * itemsPerPage ;
+			
 		}
 		
 		if (tecla == 75){
 			listaPage--;
 			if (listaPage < 0) listaPage = 0;
-			opt = listaPage * 3;
+			opt = listaPage * itemsPerPage;
 		}
 		
 		molduraTela();
 	int i, y = -7;
-	for (i = 0;i< 3;i++ ){
-		if (listaPage*3+i < 31) {
+	for (i = 0;i< itemsPerPage;i++ ){
+		if (listaPage*itemsPerPage+i < 31) {
 			purple();
-			if (listaPage*3+i == opt) green();
-			moldura(LARGURA/2, LARGURA-10, ALTURA/2 + y, ALTURA/2 +6 + y);
-			gotoxy(LARGURA/2 + 2,ALTURA/2 + 3 + y );
+			if (listaPage*itemsPerPage+i == opt) green();
+			moldura(LARGURA/2, LARGURA-10, ALTURA/2 + y, ALTURA/2 +altura + y);
+			gotoxy(LARGURA/2 + 2,ALTURA/2 + altura/2 + y );
 			reset();
-			printf("%d", lista[listaPage*3+i]);
-			y+=7;
+			printf("%d", lista[listaPage*itemsPerPage+i]);
+			y += altura+1;
 		}
 	
 	}
 
 	reset();
 	gotoxy(LARGURA/2, ALTURA/2 + 14);
-	printf ("PAGINA %d de 11", listaPage + 1);
+	printf ("PAGINA %d de %d", listaPage + 1, 31 / itemsPerPage + 1);
 	if(listaPage > 0){
 		gotoxy(LARGURA-15, ALTURA/2 + 14);
 		printf ("<<");
 	}
 	
-	if(listaPage < 10){
+	if(listaPage < 31 / itemsPerPage){
 		gotoxy(LARGURA-11, ALTURA/2 + 14);
 		printf (">>");
 	}
