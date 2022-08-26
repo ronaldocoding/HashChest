@@ -10,8 +10,26 @@
 #define BUSCAR 3
 #define SAIR 4
 
-int opt = 0, page = HOME, listaPage = 0;
+int opt = 0, page = HOME, avisoNaTela = 0;
 int lista[31];
+char textoAviso[100];
+
+typedef struct aviso {
+	int visivel;
+	int texto[100];
+} aviso;
+
+typedef struct telaInserir {
+	int opt, qtd, page, escolheuItem, itemsPagina;
+} telaInserir; 
+
+typedef struct telaRemover {
+	int opt, page, escolheuItem;
+} telaRemover; 
+
+
+telaInserir inserir;
+aviso popup;
 
 void createListaObjetos (){
 	int i;
@@ -125,6 +143,17 @@ void empty ( int x1, int x2, int y1, int y2){//funcao que imprime a moldura com 
 	}
 }
 
+void desenhaAviso(char aviso[100]){
+	int length = 0;
+	for (length=0; aviso[length]!= '\0';length++){
+		
+	}
+	
+	moldura( LARGURA/2 - length/2-6, LARGURA/2 + length/2+6, ALTURA/2-2, ALTURA/2+2);
+	gotoxy(LARGURA/2 - length/2 + 1, ALTURA/2);
+	printf("%s", aviso);
+	
+}
 
 void transicaoFim (int x1, int x2, int y1, int y2, int ax, int ay){//aviao sai levando a moldura
 	int a = ay, c = y2;
@@ -323,7 +352,10 @@ molduraTela();
 		if (tecla == 13){
 			if (opt == 0){
 				page = INSERIR;
-		
+				inserir.qtd = 0;
+				inserir.opt = 0;
+				inserir.page = 0;
+				inserir.escolheuItem = 0;
 				opt = 0;
 			}
 			
@@ -344,47 +376,70 @@ molduraTela();
 }
 
 void showInserir (int tecla){
+				
 	int itemsPerPage = 7, altura = 2;
+	
 	if (tecla == 72){
-		opt--;
-		if(opt < 0) opt=0;
+		inserir.opt--;
+		if(inserir.opt < 0) inserir.opt=0;
 			
-		if (opt < listaPage * itemsPerPage){
-				listaPage  -- ;
+		if (inserir.opt < inserir.page * itemsPerPage){
+				inserir.page-- ;
 		}
 	}
 		if (tecla == 80){
-			opt++;
-			if(opt >30) opt=30;
+			inserir.opt++;
+			if(inserir.opt >30) inserir.opt=30;
 			
-			if (opt >= (listaPage+1) * itemsPerPage ){
-				listaPage++;
+			if (inserir.opt >= (inserir.page+1) * itemsPerPage ){
+				inserir.page++;
 			}
 		}
 		
 		if (tecla == 77){
-			listaPage++;
-			if (listaPage > 31 / itemsPerPage) listaPage =  31 / itemsPerPage;
-			opt = listaPage * itemsPerPage ;
+			inserir.page++;
+			if (inserir.page > 31 / itemsPerPage) inserir.page =  31 / inserir.page;
+			inserir.opt = inserir.page * itemsPerPage ;
 			
 		}
 		
 		if (tecla == 75){
-			listaPage--;
-			if (listaPage < 0) listaPage = 0;
-			opt = listaPage * itemsPerPage;
+			inserir.page--;
+			if (inserir.page < 0) inserir.page = 0;
+			inserir.opt = inserir.page * itemsPerPage;
 		}
 		
+		if (tecla == 13){
+			inserir.escolheuItem++;
+		}
 		molduraTela();
-	int i, y = -7;
+		
+	char text[4][50] = {"  ___ _  _ ___ ___ ___ ___ ___  ",
+	" |_ _| \\| / __| __| _ \\_ _| _ \\ ",
+		"  | || .` \\__ \\ _||   /| ||   / ",
+		" |___|_|\\_|___/___|_|_\\___|_|_\\ "
+	};
+	int i, textLength = 31;
+	int x = (LARGURA - textLength)/2, y = 2;
+	reset();
+	for (i=0;i<4;i++){
+		gotoxy(x, y+i);
+		printf(text[i]);
+	}
+	
+	gotoxy((LARGURA - 69)/2, 8);
+	printf ("Use as setas para escolher o item para inserir e ENTER para confirmar");
+	
+	
+	y = -7;
 	for (i = 0;i< itemsPerPage;i++ ){
-		if (listaPage*itemsPerPage+i < 31) {
+		if (inserir.page*itemsPerPage+i < 31) {
 			purple();
-			if (listaPage*itemsPerPage+i == opt) green();
+			if (inserir.page*itemsPerPage+i == inserir.opt) green();
 			moldura(LARGURA/2, LARGURA-10, ALTURA/2 + y, ALTURA/2 +altura + y);
 			gotoxy(LARGURA/2 + 2,ALTURA/2 + altura/2 + y );
 			reset();
-			printf("%d", lista[listaPage*itemsPerPage+i]);
+			printf("%d", lista[inserir.page*itemsPerPage+i]);
 			y += altura+1;
 		}
 	
@@ -392,23 +447,48 @@ void showInserir (int tecla){
 
 	reset();
 	gotoxy(LARGURA/2, ALTURA/2 + 14);
-	printf ("PAGINA %d de %d", listaPage + 1, 31 / itemsPerPage + 1);
-	if(listaPage > 0){
+	printf ("PAGINA %d de %d", inserir.page + 1, 31 / itemsPerPage + 1);
+	if(inserir.page > 0){
 		gotoxy(LARGURA-15, ALTURA/2 + 14);
 		printf ("<<");
 	}
 	
-	if(listaPage < 31 / itemsPerPage){
+	if(inserir.page < 31 / itemsPerPage){
 		gotoxy(LARGURA-11, ALTURA/2 + 14);
 		printf (">>");
 	}
-
 	
+	if(inserir.escolheuItem == 1){
+		gotoxy((LARGURA - 30)/2, 9);
+		printf ("QUANTIDADE: ");
+		gotoxy((LARGURA)/2, 9);
+		scanf("%d", &inserir.qtd);
+		inserir.escolheuItem++;
+	}
+	
+	if(inserir.escolheuItem == 2){
+		if(inserir.qtd > 64){
+			desenhaAviso("Quantidade excede o limite.");
+			Sleep(2000);
+			inserir.escolheuItem = 1;
+		}else if(inserir.qtd < 0){
+			desenhaAviso("Insira um numero válido!");
+			Sleep(2000);
+			inserir.escolheuItem = 1;
+		}else{
+			desenhaAviso("Salvo com sucesso!");
+			Sleep(2000);
+			page = HOME;
+		}
+		
+		
+		
+	}
 }
 int main (){
-	char tecla = 77, ant = 77;
+	char tecla = 0;
 	createListaObjetos();
-	int currentPage = 0;
+	int antPage = page;
 	system ("MODE 140, 40");
 	system ("title Minecraft");
 	
@@ -423,13 +503,13 @@ int main (){
 			default: page = SAIR; break;
 		}
 	
-		if(tecla!=13){
+		if(tecla!=13 && antPage == page){
 			tecla = getch();
 		
 		}else{
 			tecla = 0;
 		}
-		
+		antPage = page;
 		system ("CLS");
 	}while(page != SAIR);
 
