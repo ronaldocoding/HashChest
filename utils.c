@@ -5,10 +5,10 @@ Node * createNode(Item item) {
     newNode->item = item;
     newNode->next = NULL;
     return newNode;
-} 
+}
 
 bool isChestFull() {
-    return busySlots == TABLE_SIZE;
+    //return busySlots == TABLE_SIZE;
 }
 
 void initializeChest() {
