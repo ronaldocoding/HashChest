@@ -4,22 +4,18 @@ void showInserir(int tecla)
 {
 	int itemsPerPage = 7;
 
-	if (tecla == 72)
-	{
+	if (tecla == 119 || tecla == 87){ // caso w|W for pressionado
 		inserir.opt--;
-		if (inserir.opt < 0)
-			inserir.opt = 0;
 
-		if (inserir.opt < inserir.page * itemsPerPage)
-		{
-			inserir.page--;
+		if(inserir.opt < 0) inserir.opt=0;
+
+		if (inserir.opt < inserir.page * itemsPerPage){
+				inserir.page--;
 		}
 	}
-	if (tecla == 80)
-	{
-		inserir.opt++;
-		if (inserir.opt > 30)
-			inserir.opt = 30;
+		if (tecla == 115 || tecla == 83){ // caso s|S for pressionado
+			inserir.opt++;
+			if(inserir.opt >30) inserir.opt=30;
 
 		if (inserir.opt >= (inserir.page + 1) * itemsPerPage)
 		{
@@ -27,26 +23,26 @@ void showInserir(int tecla)
 		}
 	}
 
-	if (tecla == 77)
-	{
-		inserir.page++;
-		if (inserir.page > 31 / itemsPerPage)
-			inserir.page = 31 / inserir.page;
-		inserir.opt = inserir.page * itemsPerPage;
-	}
+	if (tecla == 100 || tecla == 68){ // caso d|D for pressionado
+			inserir.page++;
+			if (inserir.page > 31 / itemsPerPage) inserir.page =  31 / inserir.page;
+			inserir.opt = inserir.page * itemsPerPage ;
 
-	if (tecla == 75)
-	{
-		inserir.page--;
-		if (inserir.page < 0)
-			inserir.page = 0;
-		inserir.opt = inserir.page * itemsPerPage;
-	}
+		}
 
-	if (tecla == 13)
-	{
-		inserir.escolheuItem++;
-	}
+		if (tecla == 97 || tecla == 65){ // caso a|A for pressionado
+			inserir.page--;
+			if (inserir.page < 0) inserir.page = 0;
+			inserir.opt = inserir.page * itemsPerPage;
+		}
+
+		if (tecla == 13){ // enter
+			inserir.escolheuItem++;
+		}
+
+        if(tecla == 109 || tecla == 77){ // caso m|M for pressionado
+            page = HOME;
+        }
 	molduraTela();
 
 	char text[4][50] = {"  ___ _  _ ___ ___ ___ ___ ___  ",
@@ -63,8 +59,11 @@ void showInserir(int tecla)
 	}
 
 	gotoxy((LARGURA - 69) / 2, 8);
-	printf("Use as setas para escolher o item para inserir e ENTER para confirmar");
+	printf ("Use WASD para escolher o item para inserir e ENTER para confirmar");
 
+	gotoxy((LARGURA - 30)/2, 10);
+	printf ("Pressione M para voltar ao Menu");
+	
 	showListItens();
 
 	white();

@@ -7,33 +7,24 @@ void showHome(int tecla)
     desenhaBauFechado(60, 6);
     title(50, 20);
 
-    if (tecla == 72)
-    {
-        opt -= 2;
-        if (opt < 0)
-            opt += 2;
-    }
-    if (tecla == 80)
-    {
-        opt += 2;
-        if (opt >= 4)
-            opt -= 2;
-    }
+    if (tecla == 119 || tecla == 87){ // caso w|W for pressionado
+			opt-=2;
+			if(opt < 0) opt+=2;
+		}
+		if (tecla == 115 || tecla == 83){ // caso s|S for pressionado
+			opt+=2;
+			if(opt >=4) opt-=2;
+		}
 
-    if (tecla == 77)
-    {
-        opt++;
-        if (opt >= 4)
-            opt = 3;
-    }
+		if (tecla == 100 || tecla == 68){ // caso d|D for pressionado
+			opt++;
+			if (opt>=4 )opt = 3;
+		}
 
-    if (tecla == 75)
-    {
-        opt--;
-        if (opt < 0)
-            opt = 0;
-    }
-
+		if (tecla == 97 || tecla == 65){ // caso a|A for pressionado
+			opt--;
+			if (opt<0) opt = 0;
+		}
     desenhaOpcoes(opt);
 
     if (tecla == 13)
@@ -71,7 +62,7 @@ void showHome(int tecla)
 
     gotoxy(40, ALTURA - 4);
     white();
-    printf(" Use as setas do teclado para mover e ENTER para selecionar ");
+    printf(" Use WASD para mover e ENTER para selecionar ");
     gotoxy(0, ALTURA + 1);
     printf("");
 }

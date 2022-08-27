@@ -4,6 +4,13 @@ void showBuscar(int tecla)
 {
 	molduraTela();
 
+	gotoxy((LARGURA - 30)/2, 10);
+	printf ("Pressione M para voltar ao Menu");
+
+	if(tecla == 109 || tecla == 77){ // caso m|M for pressionado
+            page = HOME;
+    }
+
 	char text[4][50] = {"  ___ _   _ ___  ___   _   ___  ",
 						" | _ ) | | / __|/ __| /_\\ | _ \\ ",
 						" | _ \\ |_| \\__ \\ (__ / _ \\|   /",
