@@ -54,6 +54,7 @@ void red () {
   printf("\033[1;31m");
 }
 
+
 void yellow (){
   printf("\033[1;33m");
 }
@@ -185,8 +186,8 @@ void transicaoInicio (int x1, int x2, int y1, int y2, int ax, int ay){//aviao en
 void cabecaSteve (int x, int y) {
 	int altura = 15, largura = 36;
 	yellow ();
-
 	moldura(x, x + largura, y,y + altura);
+
 	//cabelo
 	moldura(x, x + largura, y,y + altura/4);
 	moldura(x + largura - 5, x + largura, y,y + altura/3);
@@ -222,6 +223,7 @@ void cabecaSteve (int x, int y) {
 	printf("\xCD");
 	gotoxy(x+largura/2-5, y+altura);
 	printf("\xCD");
+
 	//olho
 	yellow();
 	moldura(x+5,x+largura/2-5, y+altura-8,y + altura-6);
@@ -317,27 +319,27 @@ int title (int x, int y){
 }
 
 void showHome(int tecla){
-molduraTela();
+    molduraTela();
 		cabecaSteve(30, 2);
 		desenhaBauFechado(60, 6);
 		title(50, 20);
 	
 
-		if (tecla == 72){
+		if (tecla == 119 || tecla == 87){ // caso w|W for pressionado
 			opt-=2;
 			if(opt < 0) opt+=2;
 		}
-		if (tecla == 80){
+		if (tecla == 115 || tecla == 83){ // caso s|S for pressionado
 			opt+=2;
 			if(opt >=4) opt-=2;
 		}
 		
-		if (tecla == 77){
+		if (tecla == 100 || tecla == 68){ // caso d|D for pressionado
 			opt++;
 			if (opt>=4 )opt = 3;
 		}
 		
-		if (tecla == 75){
+		if (tecla == 97 || tecla == 65){ // caso a|A for pressionado
 			opt--;
 			if (opt<0) opt = 0;
 		}
@@ -374,7 +376,7 @@ molduraTela();
 		
 		gotoxy(40, ALTURA-4);
 		reset();
-		printf(" Use as setas do teclado para mover e ENTER para selecionar ");
+		printf(" Use WASD para mover e ENTER para selecionar ");
 		gotoxy(0, ALTURA+1);
 		printf("");
 }
@@ -383,15 +385,16 @@ void showInserir (int tecla){
 				
 	int itemsPerPage = 7, altura = 2;
 	
-	if (tecla == 72){
+	if (tecla == 119 || tecla == 87){ // caso w|W for pressionado
 		inserir.opt--;
+
 		if(inserir.opt < 0) inserir.opt=0;
 			
 		if (inserir.opt < inserir.page * itemsPerPage){
-				inserir.page-- ;
+				inserir.page--;
 		}
 	}
-		if (tecla == 80){
+		if (tecla == 115 || tecla == 83){ // caso s|S for pressionado
 			inserir.opt++;
 			if(inserir.opt >30) inserir.opt=30;
 			
@@ -400,22 +403,27 @@ void showInserir (int tecla){
 			}
 		}
 		
-		if (tecla == 77){
+		if (tecla == 100 || tecla == 68){ // caso d|D for pressionado
 			inserir.page++;
 			if (inserir.page > 31 / itemsPerPage) inserir.page =  31 / inserir.page;
 			inserir.opt = inserir.page * itemsPerPage ;
 			
 		}
 		
-		if (tecla == 75){
+		if (tecla == 97 || tecla == 65){ // caso a|A for pressionado
 			inserir.page--;
 			if (inserir.page < 0) inserir.page = 0;
 			inserir.opt = inserir.page * itemsPerPage;
 		}
 		
-		if (tecla == 13){
+		if (tecla == 13){ // enter
 			inserir.escolheuItem++;
 		}
+
+        if(tecla == 109 || tecla == 77){ // caso m|M for pressionado
+            page = HOME;
+        }
+
 		molduraTela();
 		
 	char text[4][50] = {"  ___ _  _ ___ ___ ___ ___ ___  ",
@@ -429,10 +437,14 @@ void showInserir (int tecla){
 	for (i=0;i<4;i++){
 		gotoxy(x, y+i);
 		printf(text[i]);
+
 	}
 	
 	gotoxy((LARGURA - 69)/2, 8);
-	printf ("Use as setas para escolher o item para inserir e ENTER para confirmar");
+	printf ("Use WASD para escolher o item para inserir e ENTER para confirmar");
+
+	gotoxy((LARGURA - 30)/2, 10);
+	printf ("Pressione M para voltar ao Menu");
 	
 	
 	y = -7;
@@ -476,7 +488,7 @@ void showInserir (int tecla){
 			Sleep(2000);
 			inserir.escolheuItem = 1;
 		}else if(inserir.qtd < 0){
-			desenhaAviso("Insira um numero válido!");
+			desenhaAviso("Insira um numero vÃ¡lido!");
 			Sleep(2000);
 			inserir.escolheuItem = 1;
 		}else{
@@ -488,10 +500,19 @@ void showInserir (int tecla){
 		
 		
 	}
+
+   
 }
 
 void showRemover (int tecla) {
 	molduraTela();
+
+	gotoxy((LARGURA - 30)/2, 10);
+	printf ("Pressione M para voltar ao Menu");
+
+	if(tecla == 109 || tecla == 77){  // caso m|M for pressionado
+            page = HOME;
+        }
 	
 	char text[4][50] = {"  ___ ___ __  __  _____   _____ ___ ",
 	" | _ \\ __|  \\/  |/ _ \\ \\ / / __| _ \\ ",
@@ -510,6 +531,13 @@ void showRemover (int tecla) {
 
 void showBuscar (int tecla) {
 	molduraTela();
+
+	gotoxy((LARGURA - 30)/2, 10);
+	printf ("Pressione M para voltar ao Menu");
+
+	if(tecla == 109 || tecla == 77){ // caso m|M for pressionado
+            page = HOME;
+        }
 	
 	char text[4][50] = {"  ___ _   _ ___  ___   _   ___  ",
 	" | _ ) | | / __|/ __| /_\\ | _ \\ ",
@@ -542,9 +570,11 @@ int main (){
 		}
 	
 		if(tecla!=13 && antPage == page){
+
 			tecla = getch();
 		
 		}else{
+            
 			tecla = 0;
 		}
 		antPage = page;
