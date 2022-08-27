@@ -73,7 +73,10 @@ void empty ( int x1, int x2, int y1, int y2){//funcao que imprime a moldura com 
 
 void desenhaAviso(char aviso[100]){
 	int length = 0;
-
+	for (length=0; aviso[length]!= '\0';length++){
+		
+	}
+	
 	moldura( LARGURA/2 - length/2-6, LARGURA/2 + length/2+6, ALTURA/2-2, ALTURA/2+2);
 	gotoxy(LARGURA/2 - length/2 + 1, ALTURA/2);
 	printf("%s", aviso);

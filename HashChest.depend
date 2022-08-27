@@ -28,7 +28,7 @@
 1661628393 source:c:\niela-git\hashchest\interface\showhome.cpp
 	"interfaceLib.h"
 
-1661628393 source:c:\niela-git\hashchest\interface\showinserir.cpp
+1661631897 source:c:\niela-git\hashchest\interface\showinserir.cpp
 	"interfaceLib.h"
 
 1661628877 source:c:\niela-git\hashchest\insert.c
@@ -43,7 +43,7 @@
 1661628393 source:c:\niela-git\hashchest\interface\utilsscreen.cpp
 	"interfaceLib.h"
 
-1661631240 source:c:\niela-git\hashchest\main.cpp
+1661631472 source:c:\niela-git\hashchest\main.cpp
 	"chestLib.h"
 	"interface/interfaceLib.h"
 	<stdio.h>
