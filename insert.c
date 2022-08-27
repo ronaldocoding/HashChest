@@ -10,5 +10,5 @@ int insertNode(Chest * chest, Item * item, int pos) {
     chest->busySlots++;
     return 1;
   }
-  return handleCollision();
+  return handleCollision(chest, node, pos);
 }    
