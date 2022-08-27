@@ -38,4 +38,4 @@ void removeNode(Chest * chest, char itemName[NAME_SIZE], int pos, int deleteNum)
     }
 }
 
-// siganted by: HRK
+// signated by: HRK
