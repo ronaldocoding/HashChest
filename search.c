@@ -1,26 +1,25 @@
 #include "chestLib.h"
-#include "handleCollision.c"
 
-Result searchNode(Chest *chest, char itemName[NAME_SIZE], int pos)
+struct Result searchNode(Chest *chest, char itemName[NAME_SIZE], int pos)
 {
   Result result;
-  result.position = position;
+  result.position = pos;
   result.isAlone = true;
 
-  Node *aux = chest.slots[position]->firstNode;
+  Node *aux = chest->slots[pos]->firstNode;
 
   while (aux != NULL)
   {
-    if (strcmp(aux->item.name, name) != 0)
-      result.item = aux->item;
+    if (strcmp(aux->item->name, itemName) != 0)
+      result.item = *aux->item;
     else
       result.isAlone = false;
 
     aux = aux->next;
   }
 
-  if (result.item != NULL)
+  if (result.item.key)
     return result;
 
-  return NULL;
+  return result; //corrigir esse retorno para equivalente a NULL
 }

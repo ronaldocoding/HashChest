@@ -1,7 +1,7 @@
+#include "chestLib.h"
 #include "interface/interfaceLib.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "chestLib.h"
 
 int opt = 0, page = HOME;
 telaInserir inserir;
@@ -10,8 +10,8 @@ int lista[31];
 
 int main(int argc, const char * argv[]) {
     Chest * chest = (Chest *) malloc(sizeof(Chest));
-    initializeChest(chest);
-    printf("%d\n", hashFunction(256, "PICKAXE"));
+    //initializeChest(chest);
+    //printf("%d\n", hashFunction(256, "PICKAXE"));
 
 	char tecla = 0;
 	createListaObjetos();

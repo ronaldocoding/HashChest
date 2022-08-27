@@ -1,7 +1,7 @@
 #include "chestLib.h"
 
 int insertNode(Chest * chest, Item * item, int pos) {
-  if (isChestFull()) {
+  if (isChestFull(chest)) {
     return 0;
   }
   Node * node = createNode(item);
@@ -11,4 +11,4 @@ int insertNode(Chest * chest, Item * item, int pos) {
     return 1;
   }
   return handleCollision(chest, node, pos);
-}    
+}
