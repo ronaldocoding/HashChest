@@ -22,3 +22,11 @@ void showListItens() {
 
 	}
 }
+
+void createListaObjetos (){
+	int i;
+
+	for (i = 0; i< 31;i++){
+		lista[i] = i +1;
+	}
+}

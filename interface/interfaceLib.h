@@ -14,12 +14,15 @@
 #define BUSCAR 3
 #define SAIR 4
 
+
+/*global var declaration*/
 // opt = escolha do usuario
+extern int opt;
 // page = pagina atual
-int opt = 0, page = HOME;
+extern int page;
 
 //itens do mine
-int lista[31];
+extern int lista[31];
 
 typedef struct telaInserir {
 	int opt, qtd, page, escolheuItem, itemsPagina;
@@ -29,9 +32,8 @@ typedef struct telaRemover {
 	int opt, page, escolheuItem;
 } telaRemover;
 
-
-telaInserir inserir;
-telaRemover remover;
+extern telaInserir inserir;
+extern telaRemover remover;
 
 /* Functions Interface */
 
@@ -48,15 +50,15 @@ void gotoxy (int x, int y);
 void showListItens();
 
 // colors
-void green ();
-void blue ();
-void red ();
-void yellow ();
-void purple ();
-void white ();
+void green();
+void blue();
+void red();
+void yellow();
+void purple();
+void white();
 
 // draw in screen
-void moldura ( int x1, int x2, int y1, int y2);
+void moldura( int x1, int x2, int y1, int y2);
 void molduraTela ();
 void ImprimeAviao (int x, int y);
 void empty ( int x1, int x2, int y1, int y2);

@@ -17,7 +17,7 @@
 1661618875 source:c:\niela-git\hashchest\interface\color.cpp
 	"interfaceLib.h"
 
-1661619818 c:\niela-git\hashchest\interface\interfacelib.h
+1661624152 c:\niela-git\hashchest\interface\interfacelib.h
 	<stdio.h>
 	<windows.h>
 	<time.h>
@@ -26,12 +26,12 @@
 1661618895 source:c:\niela-git\hashchest\interface\draw.cpp
 	"interfaceLib.h"
 
-1661619916 source:c:\niela-git\hashchest\interface\showhome.cpp
+1661625225 source:c:\niela-git\hashchest\interface\showhome.cpp
 	"interfaceLib.h"
 
 1661620365 source:c:\niela-git\hashchest\interface\menu.cpp
 
-1661619909 source:c:\niela-git\hashchest\interface\showinserir.cpp
+1661624333 source:c:\niela-git\hashchest\interface\showinserir.cpp
 	"interfaceLib.h"
 
 1661619924 source:c:\niela-git\hashchest\interface\showremove.cpp
@@ -40,12 +40,22 @@
 1661619931 source:c:\niela-git\hashchest\interface\showsearch.cpp
 	"interfaceLib.h"
 
-1661619057 source:c:\niela-git\hashchest\interface\utilsscreen.cpp
+1661620961 source:c:\niela-git\hashchest\interface\utilsscreen.cpp
 	"interfaceLib.h"
 
-1661577671 source:c:\niela-git\hashchest\main.c
+1661621134 source:c:\niela-git\hashchest\main.c
 	"chestLib.h"
+	"interface/interfaceLib.h"
 
 1661544105 source:c:\niela-git\hashchest\remove.c
 	"chestLib.h"
+
+1661544105 source:c:\niela-git\hashchest\search.c
+	"chestLib.h"
+
+1661576563 source:c:\niela-git\hashchest\utils.c
+	"chestLib.h"
+
+1661625527 source:c:\niela-git\hashchest\interface.cpp
+	"interface/interfaceLib.h"
 
