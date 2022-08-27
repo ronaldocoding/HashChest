@@ -37,3 +37,5 @@ void removeNode(Chest * chest, char itemName[NAME_SIZE], int pos, int deleteNum)
         if(!equal) chest->slots[pos]->firstNode->item.quantity -= deleteNum;
     }
 }
+
+// siganted by: HRK
