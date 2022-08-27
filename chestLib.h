@@ -1,5 +1,5 @@
-#ifndef LIB_H_INCLUDED
-#define LIB_H_INCLUDED
+#ifndef chestLib_h
+#define chestLib_h
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -13,7 +13,7 @@ typedef struct Item {
 } Item;
 
 typedef struct Node {
-    Item item;
+    Item * item;
     struct Node * next;
 } Node;
 
@@ -26,18 +26,17 @@ typedef struct Chest {
     int busySlots;
 } Chest;
 
-Chest chest;
-
 // Utils functions
-Node * createNode(Item item);
-bool isChestFull();
-void initializeChest();
+Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
+Node * createNode(Item * item);
+bool isChestFull(Chest * chest);
+void initializeChest(Chest * chest);
 
 // Main functions
 int hashFunction(int key, char *name);
-void handleCollision(Node * newNode, int pos);
-void insertNode(Item item, int pos);
-void removeNode(char itemName[NAME_SIZE], int pos);
-int searchNode(int key);
+int handleCollision(Chest * chest, Node * newNode, int pos);
+int insertNode(Chest * chest, Item * item, int pos);
+void removeNode(Chest * chest, char itemName[NAME_SIZE], int pos);
+int searchNode(Chest * chest, char itemName[NAME_SIZE], int pos);
 
 #endif
