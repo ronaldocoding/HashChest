@@ -14,7 +14,7 @@ Node * createNode(Item * item) {
     newNode->item = item;
     newNode->next = NULL;
     return newNode;
-} 
+}
 
 bool isChestFull(Chest * chest) {
     return chest->busySlots == TABLE_SIZE;
