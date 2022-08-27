@@ -31,48 +31,45 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename=".gitignore" />
-		<Unit filename="LICENSE" />
-		<Unit filename="README.md" />
-		<Unit filename="Untitled2.c">
+		<Unit filename="../.gitignore" />
+		<Unit filename="../LICENSE" />
+		<Unit filename="../README.md" />
+		<Unit filename="../chestLib.h" />
+		<Unit filename="../handleCollision.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="chestLib.h" />
-		<Unit filename="color.h" />
-		<Unit filename="draw.h" />
-		<Unit filename="handleCollision.c">
+		<Unit filename="../hashFunction.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="hashFunction.c">
+		<Unit filename="../insert.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="homeScreen.h" />
-		<Unit filename="insert.c">
+		<Unit filename="../interface.cpp" />
+		<Unit filename="../interface/color.cpp" />
+		<Unit filename="../interface/draw.cpp" />
+		<Unit filename="../interface/interfaceLib.h" />
+		<Unit filename="../interface/menu.cpp" />
+		<Unit filename="../interface/showHome.cpp" />
+		<Unit filename="../interface/showInserir.cpp" />
+		<Unit filename="../interface/showRemove.cpp" />
+		<Unit filename="../interface/showSearch.cpp" />
+		<Unit filename="../interface/utilsScreen.cpp" />
+		<Unit filename="../main" />
+		<Unit filename="../main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="insertScreen.h" />
-		<Unit filename="interface.cpp" />
-		<Unit filename="interface.exe" />
-		<Unit filename="interface.o" />
-		<Unit filename="interfaceLib.h" />
-		<Unit filename="main" />
-		<Unit filename="main.c">
+		<Unit filename="../remove.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menu.h" />
-		<Unit filename="remove.c">
+		<Unit filename="../search.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="removeScreen.h" />
-		<Unit filename="search.c">
+		<Unit filename="../titles.txt" />
+		<Unit filename="../utils.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="searchScreen.h" />
-		<Unit filename="titles.txt" />
-		<Unit filename="utils.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="utils.h" />
-		<Extensions />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

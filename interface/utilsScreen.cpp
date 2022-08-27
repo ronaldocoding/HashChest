@@ -1,6 +1,4 @@
-
-#ifndef UTILS_APP
-#define UTILS_APP
+#include "interfaceLib.h"
 
 void gotoxy (int x, int y){
 	COORD coord;
@@ -24,4 +22,3 @@ void showListItens() {
 
 	}
 }
-#endif

@@ -1,5 +1,4 @@
-#ifndef COLOR_APP
-#define COLOR_APP
+#include "interfaceLib.h"
 
 // cores
 void green () {
@@ -25,5 +24,3 @@ void purple () {
 void white () {
   printf("\033[1;37m");
 }
-
-#endif

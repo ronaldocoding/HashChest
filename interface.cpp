@@ -1,4 +1,4 @@
-#include "interfaceLib.h"
+#include "interface/interfaceLib.h"
 
 int main (){
 	char tecla = 0;

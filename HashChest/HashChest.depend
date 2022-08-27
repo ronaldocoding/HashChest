@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1661544105 source:c:\niela-git\hashchest\handlecollision.c
+	"chestLib.h"
+
+1661544105 c:\niela-git\hashchest\chestlib.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1661544105 source:c:\niela-git\hashchest\hashfunction.c
+	"chestLib.h"
+	<string.h>
+
+1661544105 source:c:\niela-git\hashchest\insert.c
+	"chestLib.h"
+
+1661618875 source:c:\niela-git\hashchest\interface\color.cpp
+	"interfaceLib.h"
+
+1661619818 c:\niela-git\hashchest\interface\interfacelib.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	<conio.h>
+
+1661618895 source:c:\niela-git\hashchest\interface\draw.cpp
+	"interfaceLib.h"
+
+1661619916 source:c:\niela-git\hashchest\interface\showhome.cpp
+	"interfaceLib.h"
+
+1661620365 source:c:\niela-git\hashchest\interface\menu.cpp
+
+1661619909 source:c:\niela-git\hashchest\interface\showinserir.cpp
+	"interfaceLib.h"
+
+1661619924 source:c:\niela-git\hashchest\interface\showremove.cpp
+	"interfaceLib.h"
+
+1661619931 source:c:\niela-git\hashchest\interface\showsearch.cpp
+	"interfaceLib.h"
+
+1661619057 source:c:\niela-git\hashchest\interface\utilsscreen.cpp
+	"interfaceLib.h"
+
+1661577671 source:c:\niela-git\hashchest\main.c
+	"chestLib.h"
+
+1661544105 source:c:\niela-git\hashchest\remove.c
+	"chestLib.h"
+

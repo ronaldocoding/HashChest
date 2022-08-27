@@ -1,5 +1,5 @@
-#ifndef DRAW_APP
-#define DRAW_APP
+#include "interfaceLib.h"
+
 void moldura ( int x1, int x2, int y1, int y2){//funcao que imprime a moldura com as coordenadas dadas
 	int i, j;
 
@@ -253,4 +253,3 @@ void updateTextInScreen(char aviso[100]) {
 	gotoxy(LARGURA/2 - length/2 + 1, ALTURA/2);
 	printf("%s", aviso);
 }
-#endif
