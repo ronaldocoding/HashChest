@@ -34,6 +34,7 @@ int main(int argc, const char * argv[]) {
 			showRemover(tecla);
 			break;
 		case BUSCAR:
+            molduraTela();
 			showBuscar(tecla);
 			break;
 		default:

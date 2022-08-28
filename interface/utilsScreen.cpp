@@ -27,19 +27,7 @@ void showListItens(int tecla) {
 		}
 
 	}
-
-	white();
-	gotoxy(LARGURA/2, ALTURA/2 + 14);
-	printf ("PAGINA %d de %d", inserir.page + 1, 31 / itemsPerPage + 1);
-	if(inserir.page > 0){
-		gotoxy(LARGURA-15, ALTURA/2 + 14);
-		printf ("<<");
-	}
-
-	if(inserir.page < 31 / itemsPerPage){
-		gotoxy(LARGURA-11, ALTURA/2 + 14);
-		printf (">>");
-	}
+	controlPagination();
 }
 
 void controlaListagem(int tecla){
@@ -82,6 +70,20 @@ void controlaListagem(int tecla){
             page = HOME;
         }
 }
+
+void controlPagination() {
+white();
+	gotoxy(LARGURA/2, ALTURA/2 + 14);
+	printf ("PAGINA %d de %d", listagem.page + 1, 31 / itemsPerPage + 1);
+	if(listagem.page > 0){
+		gotoxy(LARGURA-20, ALTURA/2 + 14);
+		printf ("A <<");
+	}
+
+	if(listagem.page < 31 / itemsPerPage){
+		gotoxy(LARGURA-16, ALTURA/2 + 14);
+		printf (" >> D");
+	}}
 
 void showInstructions(){
     gotoxy((LARGURA - 69)/2, 8);

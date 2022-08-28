@@ -55,6 +55,7 @@ void gotoxy (int x, int y);
 void showListItens(int tecla);
 void controlaListagem(int tecla);
 void showInstructions();
+void controlPagination();
 
 // colors
 void green();
