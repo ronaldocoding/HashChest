@@ -74,9 +74,9 @@ void empty ( int x1, int x2, int y1, int y2){//funcao que imprime a moldura com 
 void desenhaAviso(char aviso[100]){
 	int length = 0;
 	for (length=0; aviso[length]!= '\0';length++){
-		
+
 	}
-	
+
 	moldura( LARGURA/2 - length/2-6, LARGURA/2 + length/2+6, ALTURA/2-2, ALTURA/2+2);
 	gotoxy(LARGURA/2 - length/2 + 1, ALTURA/2);
 	printf("%s", aviso);
@@ -184,6 +184,26 @@ void desenhaBauFechado (int x, int y){
 	printf("\xB9");
 
 	moldura(x+largura/2-2, x + largura/2+2, y+altura/2-1,y + altura/2+1);
+}
+
+void desenhaBauAberto (int x, int y){
+	yellow ();
+	int altura = 15, largura = 30;
+
+	moldura(x, x + largura, y,y + altura);
+    moldura(x, x + largura, y,y + altura/2);
+    moldura(x + 2, x + largura -  2, y + 1,y + altura/2);
+	gotoxy(x, y+altura/2);
+	printf("\xCC");
+	gotoxy(x+largura, y+altura/2);
+	printf("\xB9");
+	gotoxy(x + 2, y+altura/2);
+	printf("\xCA");
+	gotoxy(x+largura-2, y+altura/2);
+	printf("\xCA");
+
+    white();
+	moldura(x+largura/2-2, x + largura/2+2, y-1,y);
 }
 
 void title (int x, int y){

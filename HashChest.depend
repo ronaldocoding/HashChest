@@ -62,3 +62,63 @@
 1661628398 c:\niela-git\hashchest\handlecollision.c
 	"chestLib.h"
 
+1661722304 source:c:\repos\uea\aed\hashchest\handlecollision.c
+	"chestLib.h"
+
+1661722304 c:\repos\uea\aed\hashchest\chestlib.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1661524547 source:c:\repos\uea\aed\hashchest\hashfunction.c
+	"chestLib.h"
+	<string.h>
+
+1661722304 source:c:\repos\uea\aed\hashchest\insert.c
+	"chestLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\color.cpp
+	"interfaceLib.h"
+
+1661724571 c:\repos\uea\aed\hashchest\interface\interfacelib.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	<conio.h>
+
+1661724548 source:c:\repos\uea\aed\hashchest\interface\draw.cpp
+	"interfaceLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\menu.cpp
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\showhome.cpp
+	"interfaceLib.h"
+
+1661724632 source:c:\repos\uea\aed\hashchest\interface\showinserir.cpp
+	"interfaceLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\showremove.cpp
+	"interfaceLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\showsearch.cpp
+	"interfaceLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\interface\utilsscreen.cpp
+	"interfaceLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\main.cpp
+	"chestLib.h"
+	"interface/interfaceLib.h"
+	<stdio.h>
+	<stdlib.h>
+
+1661722304 source:c:\repos\uea\aed\hashchest\remove.c
+	"chestLib.h"
+
+1661722304 source:c:\repos\uea\aed\hashchest\search.c
+	"chestLib.h"
+
+1661724071 source:c:\repos\uea\aed\hashchest\utils.c
+	"chestLib.h"
+	<string.h>
+

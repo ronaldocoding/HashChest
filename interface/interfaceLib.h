@@ -75,6 +75,7 @@ void transicaoFim (int x1, int x2, int y1, int y2, int ax, int ay);
 void transicaoInicio (int x1, int x2, int y1, int y2, int ax, int ay);
 void cabecaSteve (int x, int y);
 void desenhaBauFechado (int x, int y);
+void desenhaBauAberto (int x, int y);
 void title (int x, int y);
 void desenhaOpcoes (int escolhido);
 void updateTextInScreen(char *aviso);

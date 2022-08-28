@@ -120,4 +120,5 @@ int itemsPerPage = 7, altura = 2;
 
 
 	}
+	desenhaBauAberto(20, 15);
 }

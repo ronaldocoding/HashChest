@@ -21,7 +21,8 @@ bool isChestFull(Chest * chest) {
 }
 
 void initializeChest(Chest * chest) {
-    for(int i = 0; i < TABLE_SIZE; i++) {
+    int i;
+    for(i = 0; i < TABLE_SIZE; i++) {
         chest->slots[i]->firstNode = NULL;
     }
     chest->busySlots = 0;
