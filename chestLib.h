@@ -37,6 +37,8 @@ typedef struct Chest
     int busySlots;
 } Chest;
 
+extern int hashCode[27];
+
 // Utils functions
 Item *createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
 Node *createNode(Item *item);
