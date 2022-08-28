@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #define NAME_SIZE 100
 #define TABLE_SIZE 31
+#define MAX_CHEST_SLOTS 27
+#define MAX_ITEMS_PER_SLOT 64
 
 typedef struct Item
 {
@@ -13,17 +15,11 @@ typedef struct Item
     int key;
 } Item;
 
-typedef struct Result
-{
-    Item item;
-    int position;
-    bool isAlone;
-} Result;
-
 typedef struct Node
 {
     Item *item;
-    struct Node *next;
+    struct Node * next;
+    struct Node * previous;
 } Node;
 
 typedef struct Slot
@@ -47,7 +43,7 @@ void initializeChest(Chest *chest);
 int hashFunction(int key, char *name);
 int handleCollision(Chest *chest, Node *newNode, int pos);
 int insertNode(Chest *chest, Item *item, int pos);
-void removeNode(Chest *chest, char itemName[NAME_SIZE], int pos);
-Result searchNode(Chest *chest, char itemName[NAME_SIZE], int pos);
+int removeNode(Chest *chest, char itemName[NAME_SIZE], int pos, int deleteNum);
+Node * searchNode(Chest *chest, char itemName[NAME_SIZE], int pos);
 
 #endif

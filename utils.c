@@ -13,11 +13,12 @@ Node * createNode(Item * item) {
     Node * newNode = (Node *) malloc(sizeof(Node));
     newNode->item = item;
     newNode->next = NULL;
+    newNode->previous = NULL;
     return newNode;
 }
 
 bool isChestFull(Chest * chest) {
-    return chest->busySlots == TABLE_SIZE;
+    return chest->busySlots == MAX_CHEST_SLOTS;
 }
 
 void initializeChest(Chest * chest) {
