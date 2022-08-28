@@ -1,8 +1,8 @@
 #include "chestLib.h"
 
-int insertNode(Chest * chest, Item * item, int pos) 
+int insertNode(Chest * chest, Item * item, int pos)
 {
-    if (isChestFull(chest)) 
+    if (isChestFull(chest))
       return 0;
 
     if(item->quantity <= 0)

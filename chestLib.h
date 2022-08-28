@@ -1,5 +1,6 @@
 #ifndef chestLib_h
 #define chestLib_h
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -36,8 +37,10 @@ typedef struct Chest
 // Utils functions
 Item *createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
 Node *createNode(Item *item);
+Slot* createSlot(void);
+Chest * createChest(void);
 bool isChestFull(Chest *chest);
-void initializeChest(Chest *chest);
+void printChest(Chest * chest);
 
 // Main functions
 int hashFunction(int key, char *name);
@@ -46,4 +49,5 @@ int insertNode(Chest *chest, Item *item, int pos);
 int removeNode(Chest *chest, char itemName[NAME_SIZE], int pos, int deleteNum);
 Node * searchNode(Chest *chest, char itemName[NAME_SIZE], int pos);
 
-#endif
+
+#endif /* chestLib_h */
