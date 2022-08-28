@@ -37,4 +37,6 @@ void showBuscar(int tecla)
         Sleep(3000);
         listagem.escolheuItem = 1;
 	}
+
+	desenhaBauAberto(20, 15);
 }

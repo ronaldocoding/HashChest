@@ -86,7 +86,7 @@
 	<time.h>
 	<conio.h>
 
-1661724548 source:c:\repos\uea\aed\hashchest\interface\draw.cpp
+1661724983 source:c:\repos\uea\aed\hashchest\interface\draw.cpp
 	"interfaceLib.h"
 
 1661722304 source:c:\repos\uea\aed\hashchest\interface\menu.cpp
@@ -97,7 +97,7 @@
 1661724632 source:c:\repos\uea\aed\hashchest\interface\showinserir.cpp
 	"interfaceLib.h"
 
-1661722304 source:c:\repos\uea\aed\hashchest\interface\showremove.cpp
+1661725088 source:c:\repos\uea\aed\hashchest\interface\showremove.cpp
 	"interfaceLib.h"
 
 1661722304 source:c:\repos\uea\aed\hashchest\interface\showsearch.cpp

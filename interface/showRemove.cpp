@@ -23,4 +23,6 @@ void showRemover(int tecla)
 		gotoxy(x, y + i);
 		printf(text[i]);
 	}
+
+	desenhaBauAberto(20, 15);
 }
