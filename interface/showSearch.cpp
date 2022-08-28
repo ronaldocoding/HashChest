@@ -24,5 +24,5 @@ void showBuscar(int tecla)
 		printf(text[i]);
 	}
 
-	showListItens();
+	showListItens(tecla);
 }

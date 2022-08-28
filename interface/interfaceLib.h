@@ -32,7 +32,12 @@ typedef struct telaRemover {
 	int opt, page, escolheuItem;
 } telaRemover;
 
+typedef struct listagemEmTela {
+	int opt, qtd, page, escolheuItem, itemsPagina;
+} listagemEmTela;
+
 extern telaInserir inserir;
+extern listagemEmTela listagem;
 extern telaRemover remover;
 
 /* Functions Interface */
@@ -47,7 +52,9 @@ void showRemover (int tecla); //ok
 
 // utils screen
 void gotoxy (int x, int y);
-void showListItens();
+void showListItens(int tecla);
+void controlaListagem(int tecla);
+void showInstructions();
 
 // colors
 void green();
