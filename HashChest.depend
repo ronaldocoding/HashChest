@@ -1,64 +1,59 @@
 # depslib dependency file v1.0
-1661628398 source:c:\niela-git\hashchest\handlecollision.c
+1661734038 source:c:\niela-git\hashchest\color.c
 	"chestLib.h"
 
-1661631462 c:\niela-git\hashchest\chestlib.h
+1661738959 c:\niela-git\hashchest\chestlib.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
-
-1661544105 source:c:\niela-git\hashchest\hashfunction.c
-	"chestLib.h"
-	<string.h>
-
-1661628393 source:c:\niela-git\hashchest\interface\color.cpp
-	"interfaceLib.h"
-
-1661628393 c:\niela-git\hashchest\interface\interfacelib.h
-	<stdio.h>
 	<windows.h>
 	<time.h>
 	<conio.h>
 
-1661628393 source:c:\niela-git\hashchest\interface\draw.cpp
-	"interfaceLib.h"
-
-1661628393 source:c:\niela-git\hashchest\interface\menu.cpp
-
-1661628393 source:c:\niela-git\hashchest\interface\showhome.cpp
-	"interfaceLib.h"
-
-1661631897 source:c:\niela-git\hashchest\interface\showinserir.cpp
-	"interfaceLib.h"
-
-1661628877 source:c:\niela-git\hashchest\insert.c
+1661734038 source:c:\niela-git\hashchest\draw.c
 	"chestLib.h"
 
-1661628393 source:c:\niela-git\hashchest\interface\showremove.cpp
-	"interfaceLib.h"
-
-1661628393 source:c:\niela-git\hashchest\interface\showsearch.cpp
-	"interfaceLib.h"
-
-1661628393 source:c:\niela-git\hashchest\interface\utilsscreen.cpp
-	"interfaceLib.h"
-
-1661631472 source:c:\niela-git\hashchest\main.cpp
-	"chestLib.h"
-	"interface/interfaceLib.h"
-	<stdio.h>
-	<stdlib.h>
-
-1661628398 source:c:\niela-git\hashchest\remove.c
-	"chestLib.h"
-
-1661628431 source:c:\niela-git\hashchest\utils.c
+1661731442 source:c:\niela-git\hashchest\handlecollision.c
 	"chestLib.h"
 	<string.h>
 
-1661631019 source:c:\niela-git\hashchest\search.c
+1661727166 source:c:\niela-git\hashchest\hashfunction.c
+	"chestLib.h"
+	<string.h>
+
+1661729721 source:c:\niela-git\hashchest\insert.c
 	"chestLib.h"
 
-1661628398 c:\niela-git\hashchest\handlecollision.c
+1661738959 source:c:\niela-git\hashchest\main.c
+	"chestLib.h"
+	"chestLib.h"
+
+1661729627 source:c:\niela-git\hashchest\remove.c
+	"chestLib.h"
+	<string.h>
+
+1661729391 source:c:\niela-git\hashchest\search.c
+	"chestLib.h"
+	<string.h>
+
+1661734038 source:c:\niela-git\hashchest\showhome.c
+	"chestLib.h"
+
+1661739995 source:c:\niela-git\hashchest\showinserir.c
+	"chestLib.h"
+	"chestLib.h"
+
+1661735630 source:c:\niela-git\hashchest\showremove.c
+	"chestLib.h"
+
+1661734038 source:c:\niela-git\hashchest\showsearch.c
+	"chestLib.h"
+
+1661735117 source:c:\niela-git\hashchest\utils.c
+	"chestLib.h"
+	<string.h>
+
+1661734038 source:c:\niela-git\hashchest\utilsscreen.c
+	"chestLib.h"
 	"chestLib.h"
 

@@ -1,9 +1,8 @@
-#include "interfaceLib.h"
+#include "chestLib.h"
 
 void showBuscar(int tecla)
 {
-	molduraTela();
-
+    //molduraTela();
 	gotoxy((LARGURA - 30)/2, 10);
 	printf ("Pressione M para voltar ao Menu");
 
@@ -17,6 +16,7 @@ void showBuscar(int tecla)
 						" |___/\\___/|___/\\___/_/ \\_\\_|_\\"};
 	int i, textLength = 32;
 	int x = (LARGURA - textLength) / 2, y = 2;
+
 	white();
 	for (i = 0; i < 4; i++)
 	{
@@ -24,5 +24,19 @@ void showBuscar(int tecla)
 		printf(text[i]);
 	}
 
-	showListItens();
+	showListItens(tecla);
+
+	if(listagem.escolheuItem == 2){
+        desenhaAviso("Opa! Itens colidiram na posicao X");
+        Sleep(2000);
+        listagem.escolheuItem = 1;
+	}
+
+	if(listagem.escolheuItem == 1){
+        desenhaAviso("O item esta na posicao X");
+        Sleep(3000);
+        listagem.escolheuItem = 1;
+	}
+
+	desenhaBauAberto(20, 15);
 }

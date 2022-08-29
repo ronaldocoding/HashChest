@@ -1,10 +1,10 @@
 #include "chestLib.h"
 #include <string.h>
 
-int handleCollision(Chest * chest, Node * newNode, int pos)
+int handleCollision(Node * newNode, int pos)
 {
     // Procura se um nó com esse nome já existe
-    Node * existingNode = searchNode(chest, newNode->item->name, pos);
+    Node * existingNode = searchNode(newNode->item->name, pos);
 
     // Caso exista
     if(existingNode != NULL)

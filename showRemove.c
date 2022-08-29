@@ -1,4 +1,4 @@
-#include "interfaceLib.h"
+#include "chestLib.h"
 
 void showRemover(int tecla)
 {
@@ -23,4 +23,9 @@ void showRemover(int tecla)
 		gotoxy(x, y + i);
 		printf(text[i]);
 	}
+
+
+			printChest();
+
+	//desenhaBauAberto(20, 15);
 }

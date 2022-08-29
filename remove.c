@@ -1,10 +1,10 @@
 #include "chestLib.h"
 #include <string.h>
 
-int removeNode(Chest * chest, char itemName[NAME_SIZE], int pos, int deleteNum)
+int removeNode(char itemName[NAME_SIZE], int pos, int deleteNum)
 {
     // Procura se um nó com esse nome já existe
-    Node * existingNode = searchNode(chest, itemName, pos);
+    Node * existingNode = searchNode(itemName, pos);
 
     // Caso exista
     if(existingNode != NULL)
