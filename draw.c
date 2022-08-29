@@ -1,4 +1,4 @@
-#include "interfaceLib.h"
+#include "chestLib.h"
 
 void moldura ( int x1, int x2, int y1, int y2){//funcao que imprime a moldura com as coordenadas dadas
 	int i, j;

@@ -2,7 +2,7 @@
 #include <string.h>
 
 
-Node * searchNode(Chest * chest, char itemName[NAME_SIZE], int pos)
+Node * searchNode(char itemName[NAME_SIZE], int pos)
 {
   Node * result = createNode(NULL), * aux = chest->slots[pos]->firstNode;
 

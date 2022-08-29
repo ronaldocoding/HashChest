@@ -1,4 +1,4 @@
-#include "interfaceLib.h"
+#include "chestLib.h"
 
 void showRemover(int tecla)
 {
@@ -24,5 +24,8 @@ void showRemover(int tecla)
 		printf(text[i]);
 	}
 
-	desenhaBauAberto(20, 15);
+
+			printChest();
+
+	//desenhaBauAberto(20, 15);
 }

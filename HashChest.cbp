@@ -31,40 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename=".gitignore" />
-		<Unit filename="LICENSE" />
-		<Unit filename="README.md" />
-		<Unit filename="chestLib.h" />
-		<Unit filename="handleCollision.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="hashFunction.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="insert.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="interface.exe" />
-		<Unit filename="interface/color.cpp" />
-		<Unit filename="interface/draw.cpp" />
-		<Unit filename="interface/interfaceLib.h" />
-		<Unit filename="interface/menu.cpp" />
-		<Unit filename="interface/showHome.cpp" />
-		<Unit filename="interface/showInserir.cpp" />
-		<Unit filename="interface/showRemove.cpp" />
-		<Unit filename="interface/showSearch.cpp" />
-		<Unit filename="interface/utilsScreen.cpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="remove.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="search.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="titles.txt" />
-		<Unit filename="utils.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
