@@ -43,7 +43,7 @@ bool isChestFull(Chest * chest)
 
 void printChest(Chest * chest)
 {
-    printf("-----------------------------------------------------------------CHEST--------------------------------------------------\n");
+    printf("------------------------MODO HASH TABLE-------------------------\n");
     printf("NÚMERO DE SLOTS OCUPADOS: %d\n\n", chest->busySlots);
     for(int i = 0; i < TABLE_SIZE; i++) {
         printf("|%d| -> ", i);
@@ -54,5 +54,5 @@ void printChest(Chest * chest)
         }
         printf("NULL\n");
     }
-    printf("------------------------------------------------------------------------------------------------------------------------\n");
+    printf("----------------------------------------------------------------\n");
 }

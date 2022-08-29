@@ -20,7 +20,7 @@ int removeNode(Chest * chest, char itemName[NAME_SIZE], int pos, int deleteNum)
             {
                 chest->slots[pos]->firstNode = existingNode->next;
 
-                // Caso o primeiro e único nó da lista
+                // Caso seja o primeiro e único nó da lista
                 if(existingNode->next == NULL)
                 {
                     chest->busySlots--;
