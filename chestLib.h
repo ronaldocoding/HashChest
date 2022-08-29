@@ -14,13 +14,14 @@ typedef struct Item
     char name[NAME_SIZE];
     int quantity;
     int key;
+    int pos;
 } Item;
 
 typedef struct Node
 {
     Item *item;
-    struct Node * next;
-    struct Node * previous;
+    struct Node *next;
+    struct Node *previous;
 } Node;
 
 typedef struct Slot
@@ -35,9 +36,9 @@ typedef struct Chest
 } Chest;
 
 // Utils functions
-Item *createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
-Node *createNode(Item *item);
-Slot* createSlot(void);
+Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
+Node * createNode(Item *item);
+Slot * createSlot(void);
 Chest * createChest(void);
 bool isChestFull(Chest *chest);
 void printChest(Chest * chest);

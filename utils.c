@@ -7,6 +7,7 @@ Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey)
     strcpy(newItem->name, itemName);
     newItem->quantity = itemQuantity;
     newItem->key = itemKey;
+    newItem->pos = -1;
     return newItem;
 }
 
@@ -43,7 +44,7 @@ bool isChestFull(Chest * chest)
 void printChest(Chest * chest)
 {
     printf("-----------------------------------------------------------------CHEST--------------------------------------------------\n");
-    printf("Number of busy slots: %d\n\n", chest->busySlots);
+    printf("NÚMERO DE SLOTS OCUPADOS: %d\n\n", chest->busySlots);
     for(int i = 0; i < TABLE_SIZE; i++) {
         printf("|%d| -> ", i);
         Node * aux = chest->slots[i]->firstNode;
