@@ -1,13 +1,13 @@
 #include "chestLib.h"
 #include <string.h>
 
-Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey)
+Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey, int itemPos)
 {
     Item * newItem = (Item *) malloc(sizeof(Item));
     strcpy(newItem->name, itemName);
     newItem->quantity = itemQuantity;
     newItem->key = itemKey;
-    newItem->pos = -1;
+    newItem->pos = itemPos;
     return newItem;
 }
 

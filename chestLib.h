@@ -36,7 +36,7 @@ typedef struct Chest
 } Chest;
 
 // Utils functions
-Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey);
+Item * createItem(char itemName[NAME_SIZE], int itemQuantity, int itemKey, int itemPos);
 Node * createNode(Item *item);
 Slot * createSlot(void);
 Chest * createChest(void);
